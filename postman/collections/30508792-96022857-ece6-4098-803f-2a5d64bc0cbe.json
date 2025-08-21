@@ -1183,12 +1183,12 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "cid::JayNNIsOhaGU1nSo9CKqBDuZZXymHxReadYuQr6W3aDjsbfOIGunk4NW0tht128CWwu7snWcaxzl0ZnxwhQT7XNx8DpBHAJ68XXv",
+									"value": "{{vault:ClientSecret}}",
 									"type": "string"
 								},
 								{
 									"key": "username",
-									"value": "cid-OFNV8VRXB2B9BA1S74O6IKQYNBKYU38A72MN4Y4C",
+									"value": "{{vault:ClientId}}",
 									"type": "string"
 								}
 							]
