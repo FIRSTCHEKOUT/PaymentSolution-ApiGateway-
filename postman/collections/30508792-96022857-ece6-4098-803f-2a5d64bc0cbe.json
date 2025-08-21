@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "30508792-96022857-ece6-4098-803f-2a5d64bc0cbe",
-		"name": "PaymentSolution (ApiGateway)",
+		"name": "FirstChekou (ApiGateway)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -1107,6 +1107,72 @@
 				},
 				{
 					"name": "AccessToken Endpoint V2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1966474b-4751-4229-97bf-cc4132a6b469",
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+									"    .tftable tr {background-color:#ffffff;}",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+									"    .tftable tr:hover {background-color:#e0ffff;}",
+									"</style>",
+									"",
+									"<table class=\"tftable\" border=\"1\">",
+									"    <tr>",
+									"        <th>Key</th>",
+									"        <th>Value</th>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Access Token</td>",
+									"        <td>{{response.value.access_token}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Token Type</td>",
+									"        <td>{{response.value.token_type}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Expires In</td>",
+									"        <td>{{response.value.expires_in}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Is Success</td>",
+									"        <td>{{response.isSuccess}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Error</td>",
+									"        <td>{{response.error}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Timestamp</td>",
+									"        <td>{{response.timestamp}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Is Failure</td>",
+									"        <td>{{response.isFailure}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Status Code</td>",
+									"        <td>{{response.statusCode}}</td>",
+									"    </tr>",
+									"</table>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    return {response: pm.response.json()};",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "30508792-54ac5d42-9a8b-4aed-9d63-dbb85b188678",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
