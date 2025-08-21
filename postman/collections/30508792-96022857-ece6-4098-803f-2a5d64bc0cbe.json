@@ -1,0 +1,1634 @@
+{
+	"info": {
+		"_postman_id": "30508792-96022857-ece6-4098-803f-2a5d64bc0cbe",
+		"name": "PaymentSolution (ApiGateway)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ApiGateway",
+			"item": [
+				{
+					"name": "Transaction",
+					"item": [
+						{
+							"name": "Query Transaction Endpoint",
+							"id": "30508792-022349a9-3906-4b47-b77f-9f773d1252f5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJmcmFua2xpbi5wb2tvQGZpcnN0YmFua25pZ2VyaWEuY29tIiwianRpIjoiMjVjYmFiODQtOWEyMi00NmZiLTg4NDEtZDRmZWU4YzZkYmY0IiwiYXV0aF9zaWduIjoiTXJOdm5ad2piWWQwdGt3RkhLV2c1L09EMXhJZVNFU05MeFNDQzl3dnFFa2JVWWgxM2d1VkNRZXVWZGp1dmlWK2JRcEFuNjNtWFBIOWhSNmdrUHYxVlE9PSIsInJvbGUiOiJhZG1pbiIsImNfaGFzaCI6IjQxMDkyMDc0MDgiLCJ1c2VyQWdlbnQiOiJUZXN0QWdlbnQvMS4wIiwiZ190b2tlbi1zaWduIjoibHM5dGlXTkkyeG9YT3VlWjRPVWkvTGFGM3JnRUlFdVg3MmI4NVpjK21YanpaNmVaTnZnMDNsZkVXYkRoN1VDd00rc3grSzVGOW9PTXZONHp3M296M2c9PSIsIklQLUFkZHJlc3MiOiI6OjEiLCJuYmYiOjE3NDY1MTU0ODcsImV4cCI6MTk3NDY1MTU0ODcsImlhdCI6MTc0NjUxNTQ4NywiaXNzIjoiaHR0cHM6Ly9wYXltZW50LXNvbHV0aW9uLWlkZW50aXR5LmF6dXJld2Vic2l0ZXMubmV0In0.eQ11N-6poa3ly8624BEZN-d2Wab5-ABV6VqkafiyDQ98a8qvcz-FMCjqfWxJSpWKI-3bS-0MH_Ttx_T0B5ViqHOqyYK1ErIgQIMibDUw5py354XRP7TyP5rjPXCQeY31tArw8p-U7XXQQJcwKmdipwKpNzWZnHBeZP5J8f9QHJg-0nwssMinXHfRysDz5VzabBpxolnyq6ZCd-lVKw2wIfMHYm-58UaecHfUgG4Y2ztimRxx0bBfLtMElE0FjbRxKeqyajj5kttLp9vhv7NyekrATSfiJ6xk7PB1vbDE5GdxbI4I_0pm3dAIJPtFfPPWkicLqZP_4zSHHihYP8lQjVIVovV_wGU6ehTTNgWvTaT3bqAQ4prssBa333TMITbVjPIwUu-M3uYnh1y3ahanlDrJWHNskSy_n1iwsgNtNMDb77aBauvRTi9RbAJfq-jq5U8HIwkcu8QhntH47daoM8eVkdVLjTwhMk32N-pzo9AQ7A9q20Su0RpdrYVdKk6xYFzvPLAlh0y1Bo4Gb8FJ8aJyyxOyfoXNLu306bFd-svlqhKmxhLHOJUDn33-gHD8Y9wQkjJ59NEyHy6jriL3OumjrPYw54gvROvo0BlmVfA2A_Cu76xp6OExQjaosK8ecfjnxtfwqIhUNl7D32plVKaVNrqPoPfoyqArbDIn9b8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Merchant-Id",
+										"value": "jkls",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Secret-Key",
+										"value": "nns",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{GatewayBaseAddress}}/api/v1/transactions/referenceId/X-C19BA80C3DB0426BA89D95659F07F4F6",
+									"host": [
+										"{{GatewayBaseAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transactions",
+										"referenceId",
+										"X-C19BA80C3DB0426BA89D95659F07F4F6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Initiate Transaction Endpoint",
+							"id": "30508792-62c5f2b2-ad84-4c0a-987c-72cea2835abe",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Access-Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Amount\": 100,\r\n    \"PayerEmail\": \"thomas.edison01@outlook.com\",\r\n    \"PayerName\": \"Thomas Edison\",\r\n    \"Purpose\": \"UAT\",\r\n    \"PublicKey\": \"sb-pk-mVa4TcjuSqTSiyyxjEFiBciEb7Z9yE4SY3K\",\r\n    \"paymentReference\": \"FiwnshWSUgZgjh1k2241Xks397288745604762\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{GatewayBaseAddress}}/api/v1/transactions/initiate",
+									"host": [
+										"{{GatewayBaseAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transactions",
+										"initiate"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "30508792-be0e784a-22cb-4d6a-9b9b-0276204101ee",
+									"name": "Initiate Transaction Endpoint",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"Amount\": 100,\r\n    \"PayerEmail\": \"thomas.edison01@outlook.com\",\r\n    \"PayerName\": \"Thomas Edison\",\r\n    \"Purpose\": \"UAT\",\r\n    \"PublicKey\": \"sb-pk-mVa4TcjuSqTSiyyxjEFiBciEb7Z9yE4SY3K\",\r\n    \"paymentReference\": \"FiwnWSUZgjh1k2241Xks397288745604762\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{GatewayBaseAddress}}/api/v1/transactions/initiate",
+											"host": [
+												"{{GatewayBaseAddress}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"transactions",
+												"initiate"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Length",
+											"value": "197"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 15 Jul 2025 05:46:43 GMT"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-store, must-revalidate, no-cache, post-check=0, pre-check=0"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "strict -origin-when-cross-origin"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
+										},
+										{
+											"key": "X-Content-Security-Policy",
+											"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"data\": {\n        \"accessCode\": \"TX-AF0696F49E7D44F89F17E92C28E214BF\"\n    },\n    \"status\": \"OK\"\n}"
+								}
+							]
+						}
+					],
+					"id": "30508792-286a77e3-36ea-47c9-bf20-8ec02fd3d9a0"
+				},
+				{
+					"name": "USSD",
+					"item": [
+						{
+							"name": "Query USSD Payment Endpoint",
+							"id": "30508792-a09b368f-a4c6-418f-bb8d-de6a6729b984",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Access-Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "authToken",
+										"value": "{{Access-Token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{GatewayBaseAddress}}/api/v1/ussd/transactions/TX-C0F74D33AD8847CC85E6DD490644ABB4",
+									"host": [
+										"{{GatewayBaseAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ussd",
+										"transactions",
+										"TX-C0F74D33AD8847CC85E6DD490644ABB4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Initiate USSD Payment",
+							"id": "30508792-6468deac-789f-42c0-9a8d-c73784503b63",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Access-Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "AuthToken",
+										"value": "{{Access-Token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TransactionReference\": \"TX-F2E2FC1B8CE142B790C95AE57CD99466\",\r\n    \"FinancialInstitutionId\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{GatewayBaseAddress}}/api/v1/ussd/initiate",
+									"host": [
+										"{{GatewayBaseAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"ussd",
+										"initiate"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "30508792-cc91aded-e40e-4126-878e-009fd3c8bdef"
+				},
+				{
+					"name": "CARD",
+					"item": [
+						{
+							"name": "Initiate Card Payment",
+							"id": "30508792-8dd18694-153b-4b55-8d89-dd5e112929e0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Access-Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TransactionReference\": \"TX-C732E1A24CC74FE7B20D0AC4E64C191D\",\r\n    \"CardType\": \"VERVE\",\r\n    \"AuthData\": \"TU63aYPDBYM/W1FiFX3Sf7dKVlNI7yFf8rbirb692+bP/YMEIvENh9zfhItsRB/V75foXH1GIz34+8VTRExAQnX7bnvl1Lvh8feoS/KdgeaQaUtGVP+6MzGU8d7Piuq0WzJByhRdr4E6nROVx3zTLKjNY8mbFoGP\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{GatewayBaseAddress}}/api/v1/cards/initiate",
+									"host": [
+										"{{GatewayBaseAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cards",
+										"initiate"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "30508792-693f6013-73c2-40ae-b138-f66afa718e2a",
+									"name": "Initiate Card Payment",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"TransactionReference\": \"TX-AF0696F49E7D44F89F17E92C28E214BF\",\r\n    \"CardType\": \"VERVE\",\r\n    \"AuthData\": \"4MkYNTTC3lZ0Df+5HwZ1z3z1T7XlgTygLhYCktLREG7me3BKX+v06vFvDW+z2QzW/P0lNveseV7mIaQn5hDm0VCaYisFJOM/utg2i7FqcJFn8ybbw4v1AOgq5yJ1N6RuYnNv1pjRCGtq02YkvJ7y6WEpAqo3pMM5\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{GatewayBaseAddress}}/api/v1/cards/initiate",
+											"host": [
+												"{{GatewayBaseAddress}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"cards",
+												"initiate"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Length",
+											"value": "294"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 15 Jul 2025 07:11:54 GMT"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-store, must-revalidate, no-cache, post-check=0, pre-check=0"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "strict -origin-when-cross-origin"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
+										},
+										{
+											"key": "X-Content-Security-Policy",
+											"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"data\": {\n        \"message\": \"Kindly enter the OTP sent to 234805***1111\",\n        \"data\": null,\n        \"transactionReference\": \"TX-AF0696F49E7D44F89F17E92C28E214BF\",\n        \"status\": \"PENDING\",\n        \"statusCode\": \"01\",\n        \"statusMessage\": \"PENDING\",\n        \"callbackUrl\": null\n    },\n    \"status\": \"OK\"\n}"
+								},
+								{
+									"id": "30508792-4738ef38-46fe-4185-8139-cd7cc4ce23ed",
+									"name": "Initiate Card Payment",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"TransactionReference\": \"TX-F4DBDBC81F8E4E5ABAAE08641EFB9AF0\",\r\n    \"CardType\": \"VERVE\",\r\n    \"AuthData\": \"+6z4YLTKJpMDBofDr1pANEgipG8h9OS8i4jIqOQvA1OiJWJlUll0SLkHZ1cikFeolCTycsGuhFOqNNcnVUY9kKrXfdO9Wih1+Wl7ZuCEp1rRauL7fMXJNqW/e0jwuQTQWZ5NRTZiFUxiySPjE426SeDhuPcKABYx\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{GatewayBaseAddress}}/api/v1/cards/initiate",
+											"host": [
+												"{{GatewayBaseAddress}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"cards",
+												"initiate"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Length",
+											"value": "223"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 18 Jul 2025 21:23:38 GMT"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-store, must-revalidate, no-cache, post-check=0, pre-check=0"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "strict -origin-when-cross-origin"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
+										},
+										{
+											"key": "X-Content-Security-Policy",
+											"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"data\": \"{\\\"transactionRef\\\":\\\"TX-F4DBDBC81F8E4E5ABAAE08641EFB9AF0\\\",\\\"paymentId\\\":\\\"474960966\\\",\\\"errors\\\":[{\\\"code\\\":\\\"10500\\\",\\\"message\\\":\\\"Error processing request, please try again\\\"}]}\",\n    \"status\": \"InternalServerError\"\n}"
+								},
+								{
+									"id": "30508792-ec0c8b3d-9f13-4409-84f0-7e6d1636fa9a",
+									"name": "Initiate Card Payment",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"TransactionReference\": \"TX-F4DBDBC81F8E4E5ABAAE08641EFB9AF0\",\r\n    \"CardType\": \"VERVE\",\r\n    \"AuthData\": \"+6z4YLTKJpMDBofDr1pANEgipG8h9OS8i4jIqOQvA1OiJWJlUll0SLkHZ1cikFeolCTycsGuhFOqNNcnVUY9kKrXfdO9Wih1+Wl7ZuCEp1rRauL7fMXJNqW/e0jwuQTQWZ5NRTZiFUxiySPjE426SeDhuPcKABYx\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{GatewayBaseAddress}}/api/v1/cards/initiate",
+											"host": [
+												"{{GatewayBaseAddress}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"cards",
+												"initiate"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Length",
+											"value": "177"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 18 Jul 2025 21:24:35 GMT"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-store, must-revalidate, no-cache, post-check=0, pre-check=0"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Permissions-Policy",
+											"value": "strict -origin-when-cross-origin"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
+										},
+										{
+											"key": "X-Content-Security-Policy",
+											"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"data\": \"{\\\"transactionRef\\\":\\\"TX-F4DBDBC81F8E4E5ABAAE08641EFB9AF0\\\",\\\"errors\\\":[{\\\"code\\\":\\\"10409\\\",\\\"message\\\":\\\"\\\\\\\"Payment already completed\\\\\\\"\\\"}]}\",\n    \"status\": \"BadRequest\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Complete (Master/Verve) Card Payment",
+							"id": "30508792-78527b0f-54b4-4221-b041-52e26b20cf52",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Access-Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Otp\": \"123456\",\r\n    \"TransactionReference\": \"3vs039344s5h\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{GatewayBaseAddress}}/api/v1/cards/complete",
+									"host": [
+										"{{GatewayBaseAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cards",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "30508792-a07468c5-b820-44e4-87e1-d2efd4b5a9ce"
+				},
+				{
+					"name": "QR",
+					"item": [
+						{
+							"name": "Initiate QR Payment",
+							"id": "30508792-74ab1f6f-d1f9-4b34-b590-f9463a813c47",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Access-Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "authToken",
+										"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmZTZlYzA0NC05MWJkLTQyMzEtODIyNy1jZjYyYzc4NTk2ZTYiLCJ0eG4tc2lnbiI6IjdsR2s0T1dkZm55YUhoRjhuejFva0xrWDVLS3ZpT252MkgzSlB1bzEycjdSRnlldFdIdjE1d3o5c1RKOUpNejdUVG1scXZpZmdtSFlTanQwNzcvckRRPT0iLCJuYmYiOjE3NDI1NDc1NzEsImV4cCI6MTc0MjU0ODQ3MSwiaWF0IjoxNzQyNTQ3NTcxLCJpc3MiOiJodHRwczovL3d3dy5maXJzdGNoZWtvdXRkZXYuY29tIiwiYXVkIjoiY2hlY2tvdXRhcGkifQ.RheDrMaRTdjPUaq8xIiDmwm9fyKZzYU_u9Q_i4_SYmF_91ys14zO1BDsBMNfPD9hhPYfnYy42RoEamvt0eN5AVPXkckvHe-lkm_RWccC9Klq1MKtpU3M8uohccFONK2FZoA1ToZkHaPyYnnSTcosUVp-evgk_KYk-8-CJBZFS-qV2vYzW8a6XLVx3PWLwLOVNEBN6ztDEBB2bHzVgDjQCCmsv0O-X5cqPMa1xEFNh-oPx9zvOZQCqX0pmp5GoBBQLbZYaySxLVmfWXpmnv651TNr0wxRE3dRdsD-4NycZdXEQigLndunENSDv3UCPUXETMRla-2autfHCBsJTZ2wMw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TransactionReference\": \"TX-F2E2FC1B8CE142B790C95AE57CD99466\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{GatewayBaseAddress}}/api/v1/qr/initiate",
+									"host": [
+										"{{GatewayBaseAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"qr",
+										"initiate"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "30508792-82cf25fe-2c26-43c6-85ed-1a956b3b8a69"
+				},
+				{
+					"name": "PAYATTITUDE",
+					"item": [
+						{
+							"name": "Initiate Pay With Phone Number",
+							"id": "30508792-8ff56de8-7bbb-4ce6-be8b-56b7a6803871",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Access-Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "authToken",
+										"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNDZkNTdiZi0zMWI3LTRjYzYtYjBkYS0yYzY4MzQxOTY4YWIiLCJ0eG4tc2lnbiI6IkFQclRrTHBabzgyOTV3UDFiVzZjOFA4ZVdQTGZtazRHaGJLcEl6STRGd004cEtWSXJrenFUOTQyM1MwY3EwcXJLY2RUZlhuY05hclRycDNPUGQzd3NnPT0iLCJuYmYiOjE3NDI1NTAzMzEsImV4cCI6MTc0MjU1MTIzMSwiaWF0IjoxNzQyNTUwMzMxLCJpc3MiOiJodHRwczovL3d3dy5maXJzdGNoZWtvdXRkZXYuY29tIiwiYXVkIjoiY2hlY2tvdXRhcGkifQ.iCNYGO3hRSZ4ciQhHivnmlcd6YCkSexEaeq5298-7u6YDdXjfNEKyz-1IgUj_8K0s_k6KV0zD6oNXnjxuWsPH6uDAbIWMnKI7i5_Y_x5xx1D_SOvuXNgw6Cx7wL8mn_7e5AtTspJrSyPHouzuOf-RL3FallKYFm7FKRYUIbFEboqrxlo6RDwrxnww1gZKh-tdWNL_WPaCpCIXIBwA18af3ymz4vnXE_nASnalo2unmide9cDj8y7isImX_IpZ4vFS8T5VkUQUcUqen4UprdGqrQ5-l_85Xm64YhqaQrUziraCYVPc56MZIXOQ_kJYXLGQMQUTjyVdj-xCOfGKRL8Hw",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TransactionReference\": \"TX-2CA09EBA0DA34F5B9B6D4BD0694A4B4C\",\r\n    \"Description\": \"test\",\r\n    \"PhoneNumber\": \"08139507763\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{GatewayBaseAddress}}/api/v1/payattitude",
+									"host": [
+										"{{GatewayBaseAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payattitude"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "30508792-4fb090b9-ca3c-412d-9432-7dc95554d98a"
+				},
+				{
+					"name": "BNPL",
+					"item": [
+						{
+							"name": "initiate",
+							"id": "30508792-7d4231da-eae1-45bc-86e5-ee54b00ed48e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Access-Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n     \"TransactionRef\" : \"FTWSUZA22IV2\",\r\n     \"AccountNumber\" : \"3078237253\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{GatewayAddress}}/api/v1/BNPL/initiate",
+									"host": [
+										"{{GatewayAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"BNPL",
+										"initiate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "validateOTP",
+							"id": "30508792-bcf3e073-4c4a-4f12-874c-c5acd9be3b0b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Access-Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TransactionRef\":\"FPQ39P281118\",\r\n    \"AccountNumber\":\"3078237253\",\r\n    \"OTP\":\"111111\"\r\n}\r\n\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{GatewayBaseAddress}}/api/v1/BNPL/validateOtp",
+									"host": [
+										"{{GatewayBaseAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"BNPL",
+										"validateOtp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "validate",
+							"id": "30508792-7bcbd839-aef5-492e-9b99-0371a3f572d5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Access-Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TransactionRef\":\"FTWSUZA22IV2\",\r\n    \"AccountNumber\":\"3078237253\",\r\n    \"Tenure\":\"3\",\r\n    \"Amount\":\"40000\",\r\n    \"AmountDue\":\"0\"\r\n} \r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{GatewayBaseAddress}}/api/v1/BNPL/validate",
+									"host": [
+										"{{GatewayBaseAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"BNPL",
+										"validate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "validate Token (Prod)",
+							"id": "30508792-e3e82358-4212-4475-80f6-7e4bb473d6d2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Access-Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TransactionRef\":\"FTQ39P381318\",\r\n    \"CustomerId\":\"3078237253\",\r\n    \"TokenCode\":\"001122\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{GatewayBaseAddress}}/api/v1/BNPL/validatetoken",
+									"host": [
+										"{{GatewayBaseAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"BNPL",
+										"validatetoken"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateOffer",
+							"id": "30508792-7364364f-567b-4b62-b20d-9a57fc0a5608",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Access-Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TransactionRef\":\"FTWSUZA22IV1\",\r\n    \"AccountNumber\":\"3078237253\",\r\n    \"Tenure\":\"3\",\r\n    \"Amount\":\"40000\",\r\n    \"AmountDue\":\"2000\"\r\n} \r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{GatewayBaseAddress}}/api/v1/BNPL/updateOffer",
+									"host": [
+										"{{GatewayBaseAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"BNPL",
+										"updateOffer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "book",
+							"id": "30508792-b4d4f2b5-e21f-4ec7-b7e4-9eebae2eb2bf",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Access-Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TransactionRef\":\"FTWSUZA22IV1\",\r\n    \"AccountNumber\":\"3078237253\",\r\n    \"Amount\":\"40000\"\r\n} \r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{GatewayBaseAddress}}/api/v1/BNPL/book",
+									"host": [
+										"{{GatewayBaseAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"BNPL",
+										"book"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "30508792-b65da88a-cfab-449f-ab9c-35a6d86fde5b"
+				},
+				{
+					"name": "AccessToken Endpoint V2",
+					"id": "30508792-54ac5d42-9a8b-4aed-9d63-dbb85b188678",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "cid::JayNNIsOhaGU1nSo9CKqBDuZZXymHxReadYuQr6W3aDjsbfOIGunk4NW0tht128CWwu7snWcaxzl0ZnxwhQT7XNx8DpBHAJ68XXv",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "cid-OFNV8VRXB2B9BA1S74O6IKQYNBKYU38A72MN4Y4C",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text",
+									"uuid": "e00687f7-e2e3-48f3-9555-6c052cf61999"
+								},
+								{
+									"key": "client_Id",
+									"value": "cid-J8FSCL1NNA3A30D9HP5O6RAY3IRYJA6PX3BVDKSK",
+									"type": "text",
+									"uuid": "a7f301af-466e-4772-b0f6-990024f685e3",
+									"disabled": true
+								},
+								{
+									"key": "client_Secret",
+									"value": "cid::KRnFzmbG8F5aYKNTkjRMfU1lgHoNItgFGoTnJPKKDnvZtKY5Ci",
+									"type": "text",
+									"uuid": "392e74d8-639f-4599-85c8-56544888d9dd",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{IdenityServerAddress}}api/v2/authenticate/token",
+							"host": [
+								"{{IdenityServerAddress}}api"
+							],
+							"path": [
+								"v2",
+								"authenticate",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "30508792-b5e08bfc-ec46-4ae8-99ce-fa63587af3c7",
+							"name": "AccessToken Endpoint V2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials",
+											"type": "text",
+											"uuid": "e00687f7-e2e3-48f3-9555-6c052cf61999"
+										},
+										{
+											"key": "client_Id",
+											"value": "cid-J8FSCL1NNA3A30D9HP5O6RAY3IRYJA6PX3BVDKSK",
+											"type": "text",
+											"uuid": "a7f301af-466e-4772-b0f6-990024f685e3",
+											"disabled": true
+										},
+										{
+											"key": "client_Secret",
+											"value": "cid::KRnFzmbG8F5aYKNTkjRMfU1lgHoNItgFGoTnJPKKDnvZtKY5Ci",
+											"type": "text",
+											"uuid": "392e74d8-639f-4599-85c8-56544888d9dd",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{IdenityServerAddress}}api/v2/authenticate/token",
+									"host": [
+										"{{IdenityServerAddress}}api"
+									],
+									"path": [
+										"v2",
+										"authenticate",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 18 Jul 2025 21:23:06 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "10"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "9"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1752873830"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"value\": {\n        \"access_token\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJjYXJkIiwidXNzZCIsInBheWF0dGl0dWRlIiwicXIiLCJwYXl3aXRodHJhbnNmZXIiXSwiY2giOiJGQ0swMDAxIiwianRpIjoiaTZqcFl2blNLcS9uaDZNOG1sNlQrVUVvc01iTXdFSzFqbHBKMWtaREZxZzI5L08wTFNBZndDZDdSYnQ1TWxzcXhCZnlSSEpQYkxQcGpTTEtsQlE4S1RMNVlZY2xwVWJyWmI5ViIsInVzZXJBZ2VudCI6IlBvc3RtYW5SdW50aW1lLzcuNDQuMSIsImdfdG9rZW4tc2lnbiI6ImE2NFZLMTBQcGF5Z0dtVVhFL2JwODQ2RldzM0F2QnN4b2FZT3gxRUlKU2pHTjZvNnp3bStobUpDaU9ucEtNM0JhcFVxcXRjMWJzTkFnZFEwOHd5aUtBPT0iLCJJUC1BZGRyZXNzIjoiMTAyLjg4LjExMS4yMDU6NDgxMDAiLCJuYmYiOjE3NTI4NzM3ODUsImV4cCI6MTc1MjkwOTc4NSwiaWF0IjoxNzUyODczNzg1LCJpc3MiOiJodHRwczovL3d3dy5maXJzdGNoZWtvdXRkZXYuY29tIiwiYXVkIjoiaWRlbnRpdHkifQ.fpNnEcZmB9sjn0nujxV8AmI2HIq1sQJeUqrFOHChf2uKtlRRGGHCIBnJ7Dx0A8tfS5L0R0pbbJE91gD-PUxaXJXFhCAA6cz-kJsHImHWdhZQMdnuhbyfoTu6CvChzdj3vTR3X9_C5jB79aUio_L5dd4OlQUKQIKYw_1b9E3bdCDDtpW67jniPn80xLEecsE9-6DOJe7uFS0_NqWaFznnUoTSP1N5ZvyLxZiwnNVTSq043nFxW6X2Acon7vnLn6p2C0dUUaAxYeTWL0yqfp_5FxUTWjFjkpN20SbXiJKRei0PQQx9ZMU358klrYmD1myzl5KXdplpKYVoJnR-3tteX6MAjoBC0TjWbmjDm0ZqS1W1EmbF3t00XohR5PAuld_8krczIoHMsmB1yeK0Exye7QAontmCTlsbAf2Ir3fT76Nr_Ydrg2LpGFQz8xHbf_w9Lom07jz8PvuW_5n44X_N42TSZ9ttO_-sa5wpgt7YtG2aT11nZQU28lZr_-N1dBBUpEqq9JHSq8GUY1zO0AbxzDxMai5rKif7g3ttd3V2JoXWm1hwLIb2Vy1D9xPHByoKq-J6_RCewC0ZMvYbDkKtQDPwDU90MGDrNLxlb6QgdQHhLLTP65S1wQwKCSAoqf2hoJsxOBslPmC-VH2oxZk2zpfqxesn7FPpD4lX_0XtG3Y\",\n        \"token_type\": \"Bearer\",\n        \"expires_in\": 36000\n    },\n    \"isSuccess\": true,\n    \"error\": null,\n    \"timestamp\": \"2025-07-18 21:23:06\",\n    \"isFailure\": false,\n    \"statusCode\": \"OK\"\n}"
+						},
+						{
+							"id": "30508792-1efe9ba3-4f42-4ca9-8656-92102a29ed3a",
+							"name": "AccessToken Endpoint V2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials",
+											"type": "text",
+											"uuid": "e00687f7-e2e3-48f3-9555-6c052cf61999"
+										},
+										{
+											"key": "client_Id",
+											"value": "cid-J8FSCL1NNA3A30D9HP5O6RAY3IRYJA6PX3BVDKSK",
+											"type": "text",
+											"uuid": "a7f301af-466e-4772-b0f6-990024f685e3",
+											"disabled": true
+										},
+										{
+											"key": "client_Secret",
+											"value": "cid::KRnFzmbG8F5aYKNTkjRMfU1lgHoNItgFGoTnJPKKDnvZtKY5Ci",
+											"type": "text",
+											"uuid": "392e74d8-639f-4599-85c8-56544888d9dd",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{IdenityServerAddress}}api/v2/authenticate/token",
+									"host": [
+										"{{IdenityServerAddress}}api"
+									],
+									"path": [
+										"v2",
+										"authenticate",
+										"token"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 18 Jul 2025 21:29:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "10"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "9"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1752874216"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"value\": null,\n    \"isSuccess\": false,\n    \"error\": \"Authentication failed. Please verify the provided credentials and try again.\",\n    \"timestamp\": \"2025-07-18 21:29:16\",\n    \"isFailure\": true,\n    \"statusCode\": \"BadRequest\"\n}"
+						},
+						{
+							"id": "30508792-5d0b86b6-3a43-4fe2-8178-814bf82e571a",
+							"name": "AccessToken Endpoint V2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials",
+											"type": "text",
+											"uuid": "e00687f7-e2e3-48f3-9555-6c052cf61999"
+										},
+										{
+											"key": "client_Id",
+											"value": "cid-J8FSCL1NNA3A30D9HP5O6RAY3IRYJA6PX3BVDKSK",
+											"type": "text",
+											"uuid": "a7f301af-466e-4772-b0f6-990024f685e3",
+											"disabled": true
+										},
+										{
+											"key": "client_Secret",
+											"value": "cid::KRnFzmbG8F5aYKNTkjRMfU1lgHoNItgFGoTnJPKKDnvZtKY5Ci",
+											"type": "text",
+											"uuid": "392e74d8-639f-4599-85c8-56544888d9dd",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{IdenityServerAddress}}api/v2/authenticate/token",
+									"host": [
+										"{{IdenityServerAddress}}api"
+									],
+									"path": [
+										"v2",
+										"authenticate",
+										"token"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 18 Jul 2025 21:29:35 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Microsoft-IIS/10.0"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "10"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "9"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1752874235"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "ASP.NET"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"value\": null,\n    \"isSuccess\": false,\n    \"error\": \"Access is temporarily restricted. Please try again shortly.\",\n    \"timestamp\": \"2025-07-18 21:29:36\",\n    \"isFailure\": true,\n    \"statusCode\": \"Forbidden\"\n}"
+						},
+						{
+							"id": "30508792-45d2895b-aa3b-4eb3-bf25-e8fdeb280361",
+							"name": "AccessToken Endpoint V2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials",
+											"type": "text",
+											"uuid": "e00687f7-e2e3-48f3-9555-6c052cf61999"
+										},
+										{
+											"key": "client_Id",
+											"value": "cid-J8FSCL1NNA3A30D9HP5O6RAY3IRYJA6PX3BVDKSK",
+											"type": "text",
+											"uuid": "a7f301af-466e-4772-b0f6-990024f685e3",
+											"disabled": true
+										},
+										{
+											"key": "client_Secret",
+											"value": "cid::KRnFzmbG8F5aYKNTkjRMfU1lgHoNItgFGoTnJPKKDnvZtKY5Ci",
+											"type": "text",
+											"uuid": "392e74d8-639f-4599-85c8-56544888d9dd",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "https://localhost:7101/api/v2/authenticate/token",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7101",
+									"path": [
+										"api",
+										"v2",
+										"authenticate",
+										"token"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Jul 2025 05:51:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "10"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "9"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1753163558"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"value\": null,\n    \"isSuccess\": false,\n    \"error\": \"Client-cid-JZA96M2S87KABMF11BWYJ0LH65ZWKHZF8H8TVE94 gateway not enabled to perform action\",\n    \"timestamp\": \"2025-07-22 05:51:40\",\n    \"isFailure\": true,\n    \"statusCode\": \"Forbidden\"\n}"
+						},
+						{
+							"id": "30508792-ef73da06-3d83-4514-983e-131db26a83b8",
+							"name": "AccessToken Endpoint V2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials",
+											"type": "text",
+											"uuid": "e00687f7-e2e3-48f3-9555-6c052cf61999"
+										},
+										{
+											"key": "client_Id",
+											"value": "cid-J8FSCL1NNA3A30D9HP5O6RAY3IRYJA6PX3BVDKSK",
+											"type": "text",
+											"uuid": "a7f301af-466e-4772-b0f6-990024f685e3",
+											"disabled": true
+										},
+										{
+											"key": "client_Secret",
+											"value": "cid::KRnFzmbG8F5aYKNTkjRMfU1lgHoNItgFGoTnJPKKDnvZtKY5Ci",
+											"type": "text",
+											"uuid": "392e74d8-639f-4599-85c8-56544888d9dd",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "https://localhost:7101/api/v2/authenticate/token",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7101",
+									"path": [
+										"api",
+										"v2",
+										"authenticate",
+										"token"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Jul 2025 05:52:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "10"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "9"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1753163601"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"value\": null,\n    \"isSuccess\": false,\n    \"error\": \"Oops! We couldn't find any secret data for this client. Please visit the portal to generate one and try again.\",\n    \"timestamp\": \"2025-07-22 05:52:23\",\n    \"isFailure\": true,\n    \"statusCode\": \"Forbidden\"\n}"
+						}
+					]
+				}
+			],
+			"id": "30508792-64ff0469-503f-4840-af4a-aa8858f7d6e0"
+		}
+	]
+}
