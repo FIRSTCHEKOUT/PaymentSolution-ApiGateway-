@@ -339,7 +339,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"TransactionReference\": \"TX-C732E1A24CC74FE7B20D0AC4E64C191D\",\r\n    \"CardType\": \"VERVE\",\r\n    \"AuthData\": \"TU63aYPDBYM/W1FiFX3Sf7dKVlNI7yFf8rbirb692+bP/YMEIvENh9zfhItsRB/V75foXH1GIz34+8VTRExAQnX7bnvl1Lvh8feoS/KdgeaQaUtGVP+6MzGU8d7Piuq0WzJByhRdr4E6nROVx3zTLKjNY8mbFoGP\"\r\n}",
+									"raw": "{\r\n    \"TransactionReference\": \"TX-79BA3C6D2C93448983213173C5BF8F24\",\r\n    \"CardType\": \"VERVE\",\r\n    \"AuthData\": \"ouHfR/bFljci2OHPVQixwjtVaEtffKPc7tzZnKBOwonfM8S06N82id5F7mqxsu0VxXFzltwAOcCGFag0sNcEhQpkXT9qg6xyz5VfCFUjD5dnrgRDfkfJ6VPSYuiKL9M8otjUT8w/Xbzi8Ud013GoIgNrW2sNrKP7\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
