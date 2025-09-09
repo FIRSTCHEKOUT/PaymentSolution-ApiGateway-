@@ -33,8 +33,7 @@
 									{
 										"key": "Merchant-Id",
 										"value": "jkls",
-										"type": "text",
-										"disabled": true
+										"type": "text"
 									},
 									{
 										"key": "Secret-Key",
@@ -55,7 +54,8 @@
 										"referenceId",
 										"X-C19BA80C3DB0426BA89D95659F07F4F6"
 									]
-								}
+								},
+								"description": "### Retrieve Transaction by Reference ID\n\nThis endpoint allows users to retrieve transaction details using a specific reference ID. The request is made via an HTTP GET method.\n\n#### Request Parameters\n\n- **referenceId** (path parameter): The unique identifier for the transaction you wish to retrieve. In this example, the reference ID is `X-C19BA80C3DB0426BA89D95659F07F4F6`.\n    \n\n#### Expected Response\n\nUpon a successful request, the API will return a response containing the transaction details associated with the provided reference ID. The response will typically include information such as transaction status, amount, date, and other relevant metadata.\n\n#### Notes\n\n- Ensure that the reference ID is correctly formatted and exists in the system to avoid errors.\n    \n- The response will be in JSON format, providing a structured view of the transaction data."
 							},
 							"response": []
 						},
