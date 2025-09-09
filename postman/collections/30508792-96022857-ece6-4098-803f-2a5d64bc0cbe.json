@@ -1218,11 +1218,14 @@
 					]
 				},
 				"url": {
-					"raw": "{{IdenityServerAddress}}api/v2/authenticate/token",
+					"raw": "https://localhost:7101/api/v2/authenticate/token",
+					"protocol": "https",
 					"host": [
-						"{{IdenityServerAddress}}api"
+						"localhost"
 					],
+					"port": "7101",
 					"path": [
+						"api",
 						"v2",
 						"authenticate",
 						"token"
