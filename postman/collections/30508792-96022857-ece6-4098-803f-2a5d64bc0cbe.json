@@ -76,7 +76,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Amount\": 100,\r\n    \"PayerEmail\": \"thomas.edison01@outlook.com\",\r\n    \"PayerName\": \"Thomas Edison\",\r\n    \"Purpose\": \"UAT\",\r\n    \"PublicKey\": \"sb-pk-tuAuFE1z761dj3kJ3GwLUbqIkIeI7fpXBOP\",\r\n    \"paymentReference\": \"FiwnshWSUg2jZ1241Xks97288745604762\"\r\n}",
+							"raw": "{\r\n    \"Amount\": 100,\r\n    \"PayerEmail\": \"thomas.edison01@outlook.com\",\r\n    \"PayerName\": \"Thomas Edison\",\r\n    \"Purpose\": \"UAT\",\r\n    \"PublicKey\": \"sb-pk-tuAuFE1z761dj3kJ3GwLUbqIkIeI7fpXBOP\",\r\n    \"paymentReference\": \"FiwnshWSUg2jZ1241Xks97288745604762\"\r\n} ",
 							"options": {
 								"raw": {
 									"language": "json"
