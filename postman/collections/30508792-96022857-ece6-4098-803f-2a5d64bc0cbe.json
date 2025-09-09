@@ -879,6 +879,14 @@
 								"v1",
 								"BNPL",
 								"initiate"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"type": "text",
+									"disabled": true
+								}
 							]
 						}
 					},
