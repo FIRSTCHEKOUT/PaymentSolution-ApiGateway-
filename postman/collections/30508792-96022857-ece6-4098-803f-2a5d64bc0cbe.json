@@ -32,15 +32,13 @@
 								"header": [
 									{
 										"key": "Merchant-Id",
-										"value": "jkls",
-										"type": "text",
-										"disabled": true
+										"value": "{{merchantId}}",
+										"type": "text"
 									},
 									{
 										"key": "Secret-Key",
-										"value": "nns",
-										"type": "text",
-										"disabled": true
+										"value": "{{secret-key}}",
+										"type": "text"
 									}
 								],
 								"url": {
