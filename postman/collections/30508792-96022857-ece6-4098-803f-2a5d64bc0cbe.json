@@ -80,7 +80,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"Amount\": 100,\r\n    \"PayerEmail\": \"thomas.edison01@outlook.com\",\r\n    \"PayerName\": \"Thomas Edison\",\r\n    \"Purpose\": \"UAT\",\r\n    \"PublicKey\": \"sb-pk-mVa4TcjuSqTSiyyxjEFiBciEb7Z9yE4SY3K\",\r\n    \"paymentReference\": \"FiwnshWSUgZgjh1k2241Xks397288745604762\"\r\n}",
+									"raw": "{\r\n    \"Amount\": 100,\r\n    \"PayerEmail\": \"thomas.edison01@outlook.com\",\r\n    \"PayerName\": \"Thomas Edison\",\r\n    \"Purpose\": \"UAT\",\r\n    \"PublicKey\": \"sb-pk-tuAuFE1z761dj3kJ3GwLUbqIkIeI7fpXBOP\",\r\n    \"paymentReference\": \"FiwnshWSUg2jZ1241Xks97288745604762\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -98,7 +98,8 @@
 										"transactions",
 										"initiate"
 									]
-								}
+								},
+								"description": "## Initiate Transaction API\n\nThis endpoint is used to initiate a transaction by providing the necessary details such as the amount, payer information, purpose of the transaction, and a public key for processing the payment.\n\n### Request\n\n- **Method**: POST\n    \n- **Endpoint**: `{{GatewayBaseAddress}}/api/v1/transactions/initiate`\n    \n- **Content-Type**: application/json\n    \n\n#### Request Body\n\nThe request body must be in JSON format and include the following parameters:\n\n- **Amount** (number): The amount of money to be transacted.\n    \n- **PayerEmail** (string): The email address of the payer.\n    \n- **PayerName** (string): The name of the payer.\n    \n- **Purpose** (string): The purpose of the transaction.\n    \n- **PublicKey** (string): The public key associated with the transaction.\n    \n- **paymentReference** (string): A unique reference for the payment.\n    \n\n**Example Request Body**:\n\n``` json\n{\n  \"Amount\": 100,\n  \"PayerEmail\": \"example@example.com\",\n  \"PayerName\": \"John Doe\",\n  \"Purpose\": \"UAT\",\n  \"PublicKey\": \"your-public-key\",\n  \"paymentReference\": \"your-payment-reference\"\n}\n\n ```\n\n### Response\n\nUpon a successful request, the API will respond with a JSON object containing the following structure:\n\n- **data** (object): An object containing the transaction details.\n    \n    - **accessCode** (string): A code that may be used for further processing of the transaction.\n        \n- **status** (string): The status of the transaction initiation request.\n    \n\n**Example Response Body**:\n\n``` json\n{\n  \"data\": {\n    \"accessCode\": \"your-access-code\"\n  },\n  \"status\": \"success\"\n}\n\n ```\n\n### Notes\n\n- Ensure that all required fields are included in the request body for successful transaction initiation.\n    \n- The `accessCode` in the response can be used for subsequent steps in the payment process."
 							},
 							"response": [
 								{
