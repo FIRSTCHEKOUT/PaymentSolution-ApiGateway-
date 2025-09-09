@@ -9,729 +9,6 @@
 			"name": "ApiGateway",
 			"item": [
 				{
-					"name": "Transaction",
-					"item": [
-						{
-							"name": "Query Transaction Endpoint",
-							"id": "30508792-022349a9-3906-4b47-b77f-9f773d1252f5",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJmcmFua2xpbi5wb2tvQGZpcnN0YmFua25pZ2VyaWEuY29tIiwianRpIjoiMjVjYmFiODQtOWEyMi00NmZiLTg4NDEtZDRmZWU4YzZkYmY0IiwiYXV0aF9zaWduIjoiTXJOdm5ad2piWWQwdGt3RkhLV2c1L09EMXhJZVNFU05MeFNDQzl3dnFFa2JVWWgxM2d1VkNRZXVWZGp1dmlWK2JRcEFuNjNtWFBIOWhSNmdrUHYxVlE9PSIsInJvbGUiOiJhZG1pbiIsImNfaGFzaCI6IjQxMDkyMDc0MDgiLCJ1c2VyQWdlbnQiOiJUZXN0QWdlbnQvMS4wIiwiZ190b2tlbi1zaWduIjoibHM5dGlXTkkyeG9YT3VlWjRPVWkvTGFGM3JnRUlFdVg3MmI4NVpjK21YanpaNmVaTnZnMDNsZkVXYkRoN1VDd00rc3grSzVGOW9PTXZONHp3M296M2c9PSIsIklQLUFkZHJlc3MiOiI6OjEiLCJuYmYiOjE3NDY1MTU0ODcsImV4cCI6MTk3NDY1MTU0ODcsImlhdCI6MTc0NjUxNTQ4NywiaXNzIjoiaHR0cHM6Ly9wYXltZW50LXNvbHV0aW9uLWlkZW50aXR5LmF6dXJld2Vic2l0ZXMubmV0In0.eQ11N-6poa3ly8624BEZN-d2Wab5-ABV6VqkafiyDQ98a8qvcz-FMCjqfWxJSpWKI-3bS-0MH_Ttx_T0B5ViqHOqyYK1ErIgQIMibDUw5py354XRP7TyP5rjPXCQeY31tArw8p-U7XXQQJcwKmdipwKpNzWZnHBeZP5J8f9QHJg-0nwssMinXHfRysDz5VzabBpxolnyq6ZCd-lVKw2wIfMHYm-58UaecHfUgG4Y2ztimRxx0bBfLtMElE0FjbRxKeqyajj5kttLp9vhv7NyekrATSfiJ6xk7PB1vbDE5GdxbI4I_0pm3dAIJPtFfPPWkicLqZP_4zSHHihYP8lQjVIVovV_wGU6ehTTNgWvTaT3bqAQ4prssBa333TMITbVjPIwUu-M3uYnh1y3ahanlDrJWHNskSy_n1iwsgNtNMDb77aBauvRTi9RbAJfq-jq5U8HIwkcu8QhntH47daoM8eVkdVLjTwhMk32N-pzo9AQ7A9q20Su0RpdrYVdKk6xYFzvPLAlh0y1Bo4Gb8FJ8aJyyxOyfoXNLu306bFd-svlqhKmxhLHOJUDn33-gHD8Y9wQkjJ59NEyHy6jriL3OumjrPYw54gvROvo0BlmVfA2A_Cu76xp6OExQjaosK8ecfjnxtfwqIhUNl7D32plVKaVNrqPoPfoyqArbDIn9b8",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "Merchant-Id",
-										"value": "{{merchantId}}",
-										"type": "text"
-									},
-									{
-										"key": "Secret-Key",
-										"value": "{{secret-key}}",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{GatewayBaseAddress}}/api/v1/transactions/referenceId/X-C19BA80C3DB0426BA89D95659F07F4F6",
-									"host": [
-										"{{GatewayBaseAddress}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"transactions",
-										"referenceId",
-										"X-C19BA80C3DB0426BA89D95659F07F4F6"
-									]
-								},
-								"description": "### Retrieve Transaction by Reference ID\n\nThis endpoint allows users to retrieve transaction details using a specific reference ID. The request is made via an HTTP GET method.\n\n#### Request Parameters\n\n- **referenceId** (path parameter): The unique identifier for the transaction you wish to retrieve. In this example, the reference ID is `X-C19BA80C3DB0426BA89D95659F07F4F6`.\n    \n\n#### Expected Response\n\nUpon a successful request, the API will return a response containing the transaction details associated with the provided reference ID. The response will typically include information such as transaction status, amount, date, and other relevant metadata.\n\n#### Notes\n\n- Ensure that the reference ID is correctly formatted and exists in the system to avoid errors.\n    \n- The response will be in JSON format, providing a structured view of the transaction data."
-							},
-							"response": []
-						},
-						{
-							"name": "Initiate Transaction Endpoint",
-							"id": "30508792-62c5f2b2-ad84-4c0a-987c-72cea2835abe",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{Access-Token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"Amount\": 100,\r\n    \"PayerEmail\": \"thomas.edison01@outlook.com\",\r\n    \"PayerName\": \"Thomas Edison\",\r\n    \"Purpose\": \"UAT\",\r\n    \"PublicKey\": \"sb-pk-tuAuFE1z761dj3kJ3GwLUbqIkIeI7fpXBOP\",\r\n    \"paymentReference\": \"FiwnshWSUg2jZ1241Xks97288745604762\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{GatewayBaseAddress}}/api/v1/transactions/initiate",
-									"host": [
-										"{{GatewayBaseAddress}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"transactions",
-										"initiate"
-									]
-								},
-								"description": "\n## Initiate Transaction API\n\nThis endpoint is used to initiate a transaction by providing the necessary details such as the amount, payer information, purpose of the transaction, and a public key for processing the payment. It is essential for enabling secure and efficient payment processing.\n\n### Request\n\n- **Method**: POST\n    \n- **Endpoint**: `{{GatewayBaseAddress}}/api/v1/transactions/initiate`\n    \n- **Content-Type**: application/json\n\n#### Request Body\n\nThe request body must be in JSON format and include the following parameters:\n\n- **Amount** (number): The amount of money to be transacted. \n  - *Example*: `100`\n    \n- **PayerEmail** (string): The email address of the payer. \n  - *Example*: `example@example.com`\n    \n- **PayerName** (string): The name of the payer. \n  - *Example*: `John Doe`\n    \n- **Purpose** (string): The purpose of the transaction. \n  - *Example*: `UAT`\n    \n- **PublicKey** (string): The public key associated with the transaction. \n  - *Example*: `your-public-key`\n    \n- **paymentReference** (string): A unique reference for the payment. \n  - *Example*: `your-payment-reference`\n\n**Example Request Body**:\n\n``` json\n{\n  \"Amount\": 100,\n  \"PayerEmail\": \"example@example.com\",\n  \"PayerName\": \"John Doe\",\n  \"Purpose\": \"UAT\",\n  \"PublicKey\": \"your-public-key\",\n  \"paymentReference\": \"your-payment-reference\"\n}\n```\n\n### Response\n\nUpon a successful request, the API will respond with a JSON object containing the following structure:\n\n- **data** (object): An object containing the transaction details.\n    \n    - **accessCode** (string): A code that may be used for further processing of the transaction. This code is crucial for completing the payment process and should be securely stored.\n        \n- **status** (string): The status of the transaction initiation request. Possible values include:\n  - `success`: Indicates that the transaction has been successfully initiated.\n  - `failure`: Indicates that the transaction initiation has failed, and further details may be provided in the response.\n\n**Example Response Body**:\n\n``` json\n{\n  \"data\": {\n    \"accessCode\": \"your-access-code\"\n  },\n  \"status\": \"success\"\n}\n```\n\n### Notes\n\n- Ensure that all required fields are included in the request body for successful transaction initiation.\n    \n- The `accessCode` in the response can be used for subsequent steps in the payment process, such as confirming the transaction or redirecting the user to a payment gateway.\n    \n- Review the `status` field to determine the outcome of the transaction initiation, and handle errors appropriately based on the status returned.\n"
-							},
-							"response": [
-								{
-									"id": "30508792-be0e784a-22cb-4d6a-9b9b-0276204101ee",
-									"name": "Initiate Transaction Endpoint",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"Amount\": 100,\r\n    \"PayerEmail\": \"thomas.edison01@outlook.com\",\r\n    \"PayerName\": \"Thomas Edison\",\r\n    \"Purpose\": \"UAT\",\r\n    \"PublicKey\": \"sb-pk-mVa4TcjuSqTSiyyxjEFiBciEb7Z9yE4SY3K\",\r\n    \"paymentReference\": \"FiwnWSUZgjh1k2241Xks397288745604762\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{GatewayBaseAddress}}/api/v1/transactions/initiate",
-											"host": [
-												"{{GatewayBaseAddress}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"transactions",
-												"initiate"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Length",
-											"value": "197"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 15 Jul 2025 05:46:43 GMT"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-store, must-revalidate, no-cache, post-check=0, pre-check=0"
-										},
-										{
-											"key": "Content-Encoding",
-											"value": "gzip"
-										},
-										{
-											"key": "Expires",
-											"value": "0"
-										},
-										{
-											"key": "Pragma",
-											"value": "no-cache"
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=31536000; includeSubDomains; preload"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "Permissions-Policy",
-											"value": "strict -origin-when-cross-origin"
-										},
-										{
-											"key": "X-Permitted-Cross-Domain-Policies",
-											"value": "none"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "Content-Security-Policy",
-											"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
-										},
-										{
-											"key": "X-Content-Security-Policy",
-											"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
-										},
-										{
-											"key": "Referrer-Policy",
-											"value": "same-origin"
-										},
-										{
-											"key": "Cross-Origin-Opener-Policy",
-											"value": "same-origin"
-										},
-										{
-											"key": "Cross-Origin-Embedder-Policy",
-											"value": "require-corp"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"data\": {\n        \"accessCode\": \"TX-AF0696F49E7D44F89F17E92C28E214BF\"\n    },\n    \"status\": \"OK\"\n}"
-								}
-							]
-						}
-					],
-					"id": "30508792-286a77e3-36ea-47c9-bf20-8ec02fd3d9a0"
-				},
-				{
-					"name": "USSD",
-					"item": [
-						{
-							"name": "Query USSD Payment Endpoint",
-							"id": "30508792-a09b368f-a4c6-418f-bb8d-de6a6729b984",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{Access-Token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "authToken",
-										"value": "{{Access-Token}}",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{GatewayBaseAddress}}/api/v1/ussd/transactions/TX-C0F74D33AD8847CC85E6DD490644ABB4",
-									"host": [
-										"{{GatewayBaseAddress}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"ussd",
-										"transactions",
-										"TX-C0F74D33AD8847CC85E6DD490644ABB4"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Initiate USSD Payment",
-							"id": "30508792-6468deac-789f-42c0-9a8d-c73784503b63",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{Access-Token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "AuthToken",
-										"value": "{{Access-Token}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"TransactionReference\": \"TX-F2E2FC1B8CE142B790C95AE57CD99466\",\r\n    \"FinancialInstitutionId\": 5\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{GatewayBaseAddress}}/api/v1/ussd/initiate",
-									"host": [
-										"{{GatewayBaseAddress}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"ussd",
-										"initiate"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"id": "30508792-cc91aded-e40e-4126-878e-009fd3c8bdef"
-				},
-				{
-					"name": "CARD",
-					"item": [
-						{
-							"name": "Initiate Card Payment",
-							"id": "30508792-8dd18694-153b-4b55-8d89-dd5e112929e0",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{Access-Token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"TransactionReference\": \"TX-79BA3C6D2C93448983213173C5BF8F24\",\r\n    \"CardType\": \"VERVE\",\r\n    \"AuthData\": \"ouHfR/bFljci2OHPVQixwjtVaEtffKPc7tzZnKBOwonfM8S06N82id5F7mqxsu0VxXFzltwAOcCGFag0sNcEhQpkXT9qg6xyz5VfCFUjD5dnrgRDfkfJ6VPSYuiKL9M8otjUT8w/Xbzi8Ud013GoIgNrW2sNrKP7\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{GatewayBaseAddress}}/api/v1/cards/initiate",
-									"host": [
-										"{{GatewayBaseAddress}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"cards",
-										"initiate"
-									]
-								}
-							},
-							"response": [
-								{
-									"id": "30508792-693f6013-73c2-40ae-b138-f66afa718e2a",
-									"name": "Initiate Card Payment",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"TransactionReference\": \"TX-AF0696F49E7D44F89F17E92C28E214BF\",\r\n    \"CardType\": \"VERVE\",\r\n    \"AuthData\": \"4MkYNTTC3lZ0Df+5HwZ1z3z1T7XlgTygLhYCktLREG7me3BKX+v06vFvDW+z2QzW/P0lNveseV7mIaQn5hDm0VCaYisFJOM/utg2i7FqcJFn8ybbw4v1AOgq5yJ1N6RuYnNv1pjRCGtq02YkvJ7y6WEpAqo3pMM5\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{GatewayBaseAddress}}/api/v1/cards/initiate",
-											"host": [
-												"{{GatewayBaseAddress}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"cards",
-												"initiate"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Length",
-											"value": "294"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 15 Jul 2025 07:11:54 GMT"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-store, must-revalidate, no-cache, post-check=0, pre-check=0"
-										},
-										{
-											"key": "Content-Encoding",
-											"value": "gzip"
-										},
-										{
-											"key": "Expires",
-											"value": "0"
-										},
-										{
-											"key": "Pragma",
-											"value": "no-cache"
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=31536000; includeSubDomains; preload"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "Permissions-Policy",
-											"value": "strict -origin-when-cross-origin"
-										},
-										{
-											"key": "X-Permitted-Cross-Domain-Policies",
-											"value": "none"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "Content-Security-Policy",
-											"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
-										},
-										{
-											"key": "X-Content-Security-Policy",
-											"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
-										},
-										{
-											"key": "Referrer-Policy",
-											"value": "same-origin"
-										},
-										{
-											"key": "Cross-Origin-Opener-Policy",
-											"value": "same-origin"
-										},
-										{
-											"key": "Cross-Origin-Embedder-Policy",
-											"value": "require-corp"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"data\": {\n        \"message\": \"Kindly enter the OTP sent to 234805***1111\",\n        \"data\": null,\n        \"transactionReference\": \"TX-AF0696F49E7D44F89F17E92C28E214BF\",\n        \"status\": \"PENDING\",\n        \"statusCode\": \"01\",\n        \"statusMessage\": \"PENDING\",\n        \"callbackUrl\": null\n    },\n    \"status\": \"OK\"\n}"
-								},
-								{
-									"id": "30508792-4738ef38-46fe-4185-8139-cd7cc4ce23ed",
-									"name": "Initiate Card Payment",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"TransactionReference\": \"TX-F4DBDBC81F8E4E5ABAAE08641EFB9AF0\",\r\n    \"CardType\": \"VERVE\",\r\n    \"AuthData\": \"+6z4YLTKJpMDBofDr1pANEgipG8h9OS8i4jIqOQvA1OiJWJlUll0SLkHZ1cikFeolCTycsGuhFOqNNcnVUY9kKrXfdO9Wih1+Wl7ZuCEp1rRauL7fMXJNqW/e0jwuQTQWZ5NRTZiFUxiySPjE426SeDhuPcKABYx\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{GatewayBaseAddress}}/api/v1/cards/initiate",
-											"host": [
-												"{{GatewayBaseAddress}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"cards",
-												"initiate"
-											]
-										}
-									},
-									"status": "Internal Server Error",
-									"code": 500,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Length",
-											"value": "223"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Date",
-											"value": "Fri, 18 Jul 2025 21:23:38 GMT"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-store, must-revalidate, no-cache, post-check=0, pre-check=0"
-										},
-										{
-											"key": "Expires",
-											"value": "0"
-										},
-										{
-											"key": "Pragma",
-											"value": "no-cache"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=31536000; includeSubDomains; preload"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "Permissions-Policy",
-											"value": "strict -origin-when-cross-origin"
-										},
-										{
-											"key": "X-Permitted-Cross-Domain-Policies",
-											"value": "none"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "Content-Security-Policy",
-											"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
-										},
-										{
-											"key": "X-Content-Security-Policy",
-											"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
-										},
-										{
-											"key": "Referrer-Policy",
-											"value": "same-origin"
-										},
-										{
-											"key": "Cross-Origin-Opener-Policy",
-											"value": "same-origin"
-										},
-										{
-											"key": "Cross-Origin-Embedder-Policy",
-											"value": "require-corp"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"data\": \"{\\\"transactionRef\\\":\\\"TX-F4DBDBC81F8E4E5ABAAE08641EFB9AF0\\\",\\\"paymentId\\\":\\\"474960966\\\",\\\"errors\\\":[{\\\"code\\\":\\\"10500\\\",\\\"message\\\":\\\"Error processing request, please try again\\\"}]}\",\n    \"status\": \"InternalServerError\"\n}"
-								},
-								{
-									"id": "30508792-ec0c8b3d-9f13-4409-84f0-7e6d1636fa9a",
-									"name": "Initiate Card Payment",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"TransactionReference\": \"TX-F4DBDBC81F8E4E5ABAAE08641EFB9AF0\",\r\n    \"CardType\": \"VERVE\",\r\n    \"AuthData\": \"+6z4YLTKJpMDBofDr1pANEgipG8h9OS8i4jIqOQvA1OiJWJlUll0SLkHZ1cikFeolCTycsGuhFOqNNcnVUY9kKrXfdO9Wih1+Wl7ZuCEp1rRauL7fMXJNqW/e0jwuQTQWZ5NRTZiFUxiySPjE426SeDhuPcKABYx\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{GatewayBaseAddress}}/api/v1/cards/initiate",
-											"host": [
-												"{{GatewayBaseAddress}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"cards",
-												"initiate"
-											]
-										}
-									},
-									"status": "Bad Request",
-									"code": 400,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Length",
-											"value": "177"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Date",
-											"value": "Fri, 18 Jul 2025 21:24:35 GMT"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-store, must-revalidate, no-cache, post-check=0, pre-check=0"
-										},
-										{
-											"key": "Expires",
-											"value": "0"
-										},
-										{
-											"key": "Pragma",
-											"value": "no-cache"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=31536000; includeSubDomains; preload"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "Permissions-Policy",
-											"value": "strict -origin-when-cross-origin"
-										},
-										{
-											"key": "X-Permitted-Cross-Domain-Policies",
-											"value": "none"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "Content-Security-Policy",
-											"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
-										},
-										{
-											"key": "X-Content-Security-Policy",
-											"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
-										},
-										{
-											"key": "Referrer-Policy",
-											"value": "same-origin"
-										},
-										{
-											"key": "Cross-Origin-Opener-Policy",
-											"value": "same-origin"
-										},
-										{
-											"key": "Cross-Origin-Embedder-Policy",
-											"value": "require-corp"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"data\": \"{\\\"transactionRef\\\":\\\"TX-F4DBDBC81F8E4E5ABAAE08641EFB9AF0\\\",\\\"errors\\\":[{\\\"code\\\":\\\"10409\\\",\\\"message\\\":\\\"\\\\\\\"Payment already completed\\\\\\\"\\\"}]}\",\n    \"status\": \"BadRequest\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Complete (Master/Verve) Card Payment",
-							"id": "30508792-78527b0f-54b4-4221-b041-52e26b20cf52",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{Access-Token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"Otp\": \"123456\",\r\n    \"TransactionReference\": \"3vs039344s5h\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{GatewayBaseAddress}}/api/v1/cards/complete",
-									"host": [
-										"{{GatewayBaseAddress}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"cards",
-										"complete"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"id": "30508792-a07468c5-b820-44e4-87e1-d2efd4b5a9ce"
-				},
-				{
 					"name": "QR",
 					"item": [
 						{
@@ -1696,6 +973,729 @@
 				}
 			],
 			"id": "30508792-64ff0469-503f-4840-af4a-aa8858f7d6e0"
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Query Transaction Endpoint",
+					"id": "30508792-022349a9-3906-4b47-b77f-9f773d1252f5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJmcmFua2xpbi5wb2tvQGZpcnN0YmFua25pZ2VyaWEuY29tIiwianRpIjoiMjVjYmFiODQtOWEyMi00NmZiLTg4NDEtZDRmZWU4YzZkYmY0IiwiYXV0aF9zaWduIjoiTXJOdm5ad2piWWQwdGt3RkhLV2c1L09EMXhJZVNFU05MeFNDQzl3dnFFa2JVWWgxM2d1VkNRZXVWZGp1dmlWK2JRcEFuNjNtWFBIOWhSNmdrUHYxVlE9PSIsInJvbGUiOiJhZG1pbiIsImNfaGFzaCI6IjQxMDkyMDc0MDgiLCJ1c2VyQWdlbnQiOiJUZXN0QWdlbnQvMS4wIiwiZ190b2tlbi1zaWduIjoibHM5dGlXTkkyeG9YT3VlWjRPVWkvTGFGM3JnRUlFdVg3MmI4NVpjK21YanpaNmVaTnZnMDNsZkVXYkRoN1VDd00rc3grSzVGOW9PTXZONHp3M296M2c9PSIsIklQLUFkZHJlc3MiOiI6OjEiLCJuYmYiOjE3NDY1MTU0ODcsImV4cCI6MTk3NDY1MTU0ODcsImlhdCI6MTc0NjUxNTQ4NywiaXNzIjoiaHR0cHM6Ly9wYXltZW50LXNvbHV0aW9uLWlkZW50aXR5LmF6dXJld2Vic2l0ZXMubmV0In0.eQ11N-6poa3ly8624BEZN-d2Wab5-ABV6VqkafiyDQ98a8qvcz-FMCjqfWxJSpWKI-3bS-0MH_Ttx_T0B5ViqHOqyYK1ErIgQIMibDUw5py354XRP7TyP5rjPXCQeY31tArw8p-U7XXQQJcwKmdipwKpNzWZnHBeZP5J8f9QHJg-0nwssMinXHfRysDz5VzabBpxolnyq6ZCd-lVKw2wIfMHYm-58UaecHfUgG4Y2ztimRxx0bBfLtMElE0FjbRxKeqyajj5kttLp9vhv7NyekrATSfiJ6xk7PB1vbDE5GdxbI4I_0pm3dAIJPtFfPPWkicLqZP_4zSHHihYP8lQjVIVovV_wGU6ehTTNgWvTaT3bqAQ4prssBa333TMITbVjPIwUu-M3uYnh1y3ahanlDrJWHNskSy_n1iwsgNtNMDb77aBauvRTi9RbAJfq-jq5U8HIwkcu8QhntH47daoM8eVkdVLjTwhMk32N-pzo9AQ7A9q20Su0RpdrYVdKk6xYFzvPLAlh0y1Bo4Gb8FJ8aJyyxOyfoXNLu306bFd-svlqhKmxhLHOJUDn33-gHD8Y9wQkjJ59NEyHy6jriL3OumjrPYw54gvROvo0BlmVfA2A_Cu76xp6OExQjaosK8ecfjnxtfwqIhUNl7D32plVKaVNrqPoPfoyqArbDIn9b8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Merchant-Id",
+								"value": "{{merchantId}}",
+								"type": "text"
+							},
+							{
+								"key": "Secret-Key",
+								"value": "{{secret-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{GatewayBaseAddress}}/api/v1/transactions/referenceId/X-C19BA80C3DB0426BA89D95659F07F4F6",
+							"host": [
+								"{{GatewayBaseAddress}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"referenceId",
+								"X-C19BA80C3DB0426BA89D95659F07F4F6"
+							]
+						},
+						"description": "### Retrieve Transaction by Reference ID\n\nThis endpoint allows users to retrieve transaction details using a specific reference ID. The request is made via an HTTP GET method.\n\n#### Request Parameters\n\n- **referenceId** (path parameter): The unique identifier for the transaction you wish to retrieve. In this example, the reference ID is `X-C19BA80C3DB0426BA89D95659F07F4F6`.\n    \n\n#### Expected Response\n\nUpon a successful request, the API will return a response containing the transaction details associated with the provided reference ID. The response will typically include information such as transaction status, amount, date, and other relevant metadata.\n\n#### Notes\n\n- Ensure that the reference ID is correctly formatted and exists in the system to avoid errors.\n    \n- The response will be in JSON format, providing a structured view of the transaction data."
+					},
+					"response": []
+				},
+				{
+					"name": "Initiate Transaction Endpoint",
+					"id": "30508792-62c5f2b2-ad84-4c0a-987c-72cea2835abe",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Access-Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Amount\": 100,\r\n    \"PayerEmail\": \"thomas.edison01@outlook.com\",\r\n    \"PayerName\": \"Thomas Edison\",\r\n    \"Purpose\": \"UAT\",\r\n    \"PublicKey\": \"sb-pk-tuAuFE1z761dj3kJ3GwLUbqIkIeI7fpXBOP\",\r\n    \"paymentReference\": \"FiwnshWSUg2jZ1241Xks97288745604762\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GatewayBaseAddress}}/api/v1/transactions/initiate",
+							"host": [
+								"{{GatewayBaseAddress}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"initiate"
+							]
+						},
+						"description": "\n## Initiate Transaction API\n\nThis endpoint is used to initiate a transaction by providing the necessary details such as the amount, payer information, purpose of the transaction, and a public key for processing the payment. It is essential for enabling secure and efficient payment processing.\n\n### Request\n\n- **Method**: POST\n    \n- **Endpoint**: `{{GatewayBaseAddress}}/api/v1/transactions/initiate`\n    \n- **Content-Type**: application/json\n\n#### Request Body\n\nThe request body must be in JSON format and include the following parameters:\n\n- **Amount** (number): The amount of money to be transacted. \n  - *Example*: `100`\n    \n- **PayerEmail** (string): The email address of the payer. \n  - *Example*: `example@example.com`\n    \n- **PayerName** (string): The name of the payer. \n  - *Example*: `John Doe`\n    \n- **Purpose** (string): The purpose of the transaction. \n  - *Example*: `UAT`\n    \n- **PublicKey** (string): The public key associated with the transaction. \n  - *Example*: `your-public-key`\n    \n- **paymentReference** (string): A unique reference for the payment. \n  - *Example*: `your-payment-reference`\n\n**Example Request Body**:\n\n``` json\n{\n  \"Amount\": 100,\n  \"PayerEmail\": \"example@example.com\",\n  \"PayerName\": \"John Doe\",\n  \"Purpose\": \"UAT\",\n  \"PublicKey\": \"your-public-key\",\n  \"paymentReference\": \"your-payment-reference\"\n}\n```\n\n### Response\n\nUpon a successful request, the API will respond with a JSON object containing the following structure:\n\n- **data** (object): An object containing the transaction details.\n    \n    - **accessCode** (string): A code that may be used for further processing of the transaction. This code is crucial for completing the payment process and should be securely stored.\n        \n- **status** (string): The status of the transaction initiation request. Possible values include:\n  - `success`: Indicates that the transaction has been successfully initiated.\n  - `failure`: Indicates that the transaction initiation has failed, and further details may be provided in the response.\n\n**Example Response Body**:\n\n``` json\n{\n  \"data\": {\n    \"accessCode\": \"your-access-code\"\n  },\n  \"status\": \"success\"\n}\n```\n\n### Notes\n\n- Ensure that all required fields are included in the request body for successful transaction initiation.\n    \n- The `accessCode` in the response can be used for subsequent steps in the payment process, such as confirming the transaction or redirecting the user to a payment gateway.\n    \n- Review the `status` field to determine the outcome of the transaction initiation, and handle errors appropriately based on the status returned.\n"
+					},
+					"response": [
+						{
+							"id": "30508792-be0e784a-22cb-4d6a-9b9b-0276204101ee",
+							"name": "Initiate Transaction Endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Amount\": 100,\r\n    \"PayerEmail\": \"thomas.edison01@outlook.com\",\r\n    \"PayerName\": \"Thomas Edison\",\r\n    \"Purpose\": \"UAT\",\r\n    \"PublicKey\": \"sb-pk-mVa4TcjuSqTSiyyxjEFiBciEb7Z9yE4SY3K\",\r\n    \"paymentReference\": \"FiwnWSUZgjh1k2241Xks397288745604762\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{GatewayBaseAddress}}/api/v1/transactions/initiate",
+									"host": [
+										"{{GatewayBaseAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transactions",
+										"initiate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "197"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 05:46:43 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, must-revalidate, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Permissions-Policy",
+									"value": "strict -origin-when-cross-origin"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
+								},
+								{
+									"key": "X-Content-Security-Policy",
+									"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"data\": {\n        \"accessCode\": \"TX-AF0696F49E7D44F89F17E92C28E214BF\"\n    },\n    \"status\": \"OK\"\n}"
+						}
+					]
+				}
+			],
+			"id": "30508792-286a77e3-36ea-47c9-bf20-8ec02fd3d9a0"
+		},
+		{
+			"name": "USSD",
+			"item": [
+				{
+					"name": "Query USSD Payment Endpoint",
+					"id": "30508792-a09b368f-a4c6-418f-bb8d-de6a6729b984",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Access-Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authToken",
+								"value": "{{Access-Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{GatewayBaseAddress}}/api/v1/ussd/transactions/TX-C0F74D33AD8847CC85E6DD490644ABB4",
+							"host": [
+								"{{GatewayBaseAddress}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ussd",
+								"transactions",
+								"TX-C0F74D33AD8847CC85E6DD490644ABB4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Initiate USSD Payment",
+					"id": "30508792-6468deac-789f-42c0-9a8d-c73784503b63",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Access-Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "AuthToken",
+								"value": "{{Access-Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"TransactionReference\": \"TX-F2E2FC1B8CE142B790C95AE57CD99466\",\r\n    \"FinancialInstitutionId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GatewayBaseAddress}}/api/v1/ussd/initiate",
+							"host": [
+								"{{GatewayBaseAddress}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ussd",
+								"initiate"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "30508792-cc91aded-e40e-4126-878e-009fd3c8bdef"
+		},
+		{
+			"name": "CARD",
+			"item": [
+				{
+					"name": "Initiate Card Payment",
+					"id": "30508792-8dd18694-153b-4b55-8d89-dd5e112929e0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Access-Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"TransactionReference\": \"TX-79BA3C6D2C93448983213173C5BF8F24\",\r\n    \"CardType\": \"VERVE\",\r\n    \"AuthData\": \"ouHfR/bFljci2OHPVQixwjtVaEtffKPc7tzZnKBOwonfM8S06N82id5F7mqxsu0VxXFzltwAOcCGFag0sNcEhQpkXT9qg6xyz5VfCFUjD5dnrgRDfkfJ6VPSYuiKL9M8otjUT8w/Xbzi8Ud013GoIgNrW2sNrKP7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GatewayBaseAddress}}/api/v1/cards/initiate",
+							"host": [
+								"{{GatewayBaseAddress}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cards",
+								"initiate"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "30508792-693f6013-73c2-40ae-b138-f66afa718e2a",
+							"name": "Initiate Card Payment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TransactionReference\": \"TX-AF0696F49E7D44F89F17E92C28E214BF\",\r\n    \"CardType\": \"VERVE\",\r\n    \"AuthData\": \"4MkYNTTC3lZ0Df+5HwZ1z3z1T7XlgTygLhYCktLREG7me3BKX+v06vFvDW+z2QzW/P0lNveseV7mIaQn5hDm0VCaYisFJOM/utg2i7FqcJFn8ybbw4v1AOgq5yJ1N6RuYnNv1pjRCGtq02YkvJ7y6WEpAqo3pMM5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{GatewayBaseAddress}}/api/v1/cards/initiate",
+									"host": [
+										"{{GatewayBaseAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cards",
+										"initiate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "294"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Jul 2025 07:11:54 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, must-revalidate, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Permissions-Policy",
+									"value": "strict -origin-when-cross-origin"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
+								},
+								{
+									"key": "X-Content-Security-Policy",
+									"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"data\": {\n        \"message\": \"Kindly enter the OTP sent to 234805***1111\",\n        \"data\": null,\n        \"transactionReference\": \"TX-AF0696F49E7D44F89F17E92C28E214BF\",\n        \"status\": \"PENDING\",\n        \"statusCode\": \"01\",\n        \"statusMessage\": \"PENDING\",\n        \"callbackUrl\": null\n    },\n    \"status\": \"OK\"\n}"
+						},
+						{
+							"id": "30508792-4738ef38-46fe-4185-8139-cd7cc4ce23ed",
+							"name": "Initiate Card Payment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TransactionReference\": \"TX-F4DBDBC81F8E4E5ABAAE08641EFB9AF0\",\r\n    \"CardType\": \"VERVE\",\r\n    \"AuthData\": \"+6z4YLTKJpMDBofDr1pANEgipG8h9OS8i4jIqOQvA1OiJWJlUll0SLkHZ1cikFeolCTycsGuhFOqNNcnVUY9kKrXfdO9Wih1+Wl7ZuCEp1rRauL7fMXJNqW/e0jwuQTQWZ5NRTZiFUxiySPjE426SeDhuPcKABYx\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{GatewayBaseAddress}}/api/v1/cards/initiate",
+									"host": [
+										"{{GatewayBaseAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cards",
+										"initiate"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "223"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 18 Jul 2025 21:23:38 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, must-revalidate, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Permissions-Policy",
+									"value": "strict -origin-when-cross-origin"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
+								},
+								{
+									"key": "X-Content-Security-Policy",
+									"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"data\": \"{\\\"transactionRef\\\":\\\"TX-F4DBDBC81F8E4E5ABAAE08641EFB9AF0\\\",\\\"paymentId\\\":\\\"474960966\\\",\\\"errors\\\":[{\\\"code\\\":\\\"10500\\\",\\\"message\\\":\\\"Error processing request, please try again\\\"}]}\",\n    \"status\": \"InternalServerError\"\n}"
+						},
+						{
+							"id": "30508792-ec0c8b3d-9f13-4409-84f0-7e6d1636fa9a",
+							"name": "Initiate Card Payment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TransactionReference\": \"TX-F4DBDBC81F8E4E5ABAAE08641EFB9AF0\",\r\n    \"CardType\": \"VERVE\",\r\n    \"AuthData\": \"+6z4YLTKJpMDBofDr1pANEgipG8h9OS8i4jIqOQvA1OiJWJlUll0SLkHZ1cikFeolCTycsGuhFOqNNcnVUY9kKrXfdO9Wih1+Wl7ZuCEp1rRauL7fMXJNqW/e0jwuQTQWZ5NRTZiFUxiySPjE426SeDhuPcKABYx\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{GatewayBaseAddress}}/api/v1/cards/initiate",
+									"host": [
+										"{{GatewayBaseAddress}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cards",
+										"initiate"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "177"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 18 Jul 2025 21:24:35 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, must-revalidate, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Permissions-Policy",
+									"value": "strict -origin-when-cross-origin"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
+								},
+								{
+									"key": "X-Content-Security-Policy",
+									"value": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"data\": \"{\\\"transactionRef\\\":\\\"TX-F4DBDBC81F8E4E5ABAAE08641EFB9AF0\\\",\\\"errors\\\":[{\\\"code\\\":\\\"10409\\\",\\\"message\\\":\\\"\\\\\\\"Payment already completed\\\\\\\"\\\"}]}\",\n    \"status\": \"BadRequest\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Complete (Master/Verve) Card Payment",
+					"id": "30508792-78527b0f-54b4-4221-b041-52e26b20cf52",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Access-Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Otp\": \"123456\",\r\n    \"TransactionReference\": \"3vs039344s5h\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GatewayBaseAddress}}/api/v1/cards/complete",
+							"host": [
+								"{{GatewayBaseAddress}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cards",
+								"complete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "30508792-a07468c5-b820-44e4-87e1-d2efd4b5a9ce"
 		}
 	]
 }
